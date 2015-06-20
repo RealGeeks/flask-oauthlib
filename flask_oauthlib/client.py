@@ -622,15 +622,9 @@ class OAuthRemoteApp(object):
     def handle_response(self):
         """Handles authorization response smartly."""
         if 'oauth_verifier' in request.args:
-            try:
-                data = self.handle_oauth1_response()
-            except OAuthException as e:
-                data = e
+            data = self.handle_oauth1_response()
         elif 'code' in request.args:
-            try:
-                data = self.handle_oauth2_response()
-            except OAuthException as e:
-                data = e
+            data = self.handle_oauth2_response()
         else:
             data = self.handle_unknown_response()
 
