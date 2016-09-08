@@ -14,3 +14,4 @@ cover/
 venv/
 .tox
 *.egg
+.idea/
